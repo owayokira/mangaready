@@ -1,6 +1,6 @@
 from typing import AsyncGenerator
 
-from dishka import make_async_container, provide, Provider, Scope
+from dishka import Provider, Scope, make_async_container, provide
 from dishka.integrations.fastapi import FastapiProvider, setup_dishka
 from fastapi import FastAPI
 from sqlalchemy.ext.asyncio import AsyncEngine, AsyncSession, create_async_engine

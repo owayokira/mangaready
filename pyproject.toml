@@ -24,6 +24,9 @@ test = [
     "pytest-cov>=6.1.1",
     "pytest-mock>=3.14.0",
 ]
+lint = [
+    "ruff>=0.11.7",
+]
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
@@ -32,3 +35,70 @@ addopts = [
     "--cov=src",
     "--cov-report=html",
 ]
+
+
+[tool.ruff]
+include = ["src/**/*.py", "tests/**/*.py"]
+line-length = 120
+
+[tool.ruff.lint]
+extend-select = [
+    "FBT", # flake8-boolean-trap
+    "RET", # flake8-return
+    "S", # flake8-bandit
+    "I", # isort
+    "YTT", # flake8-2020
+    "ASYNC", # flake8-async
+    "BLE", # flake8-blind-except
+    "B", # flake8-bugbear
+    "C4", # flake8-comprehensions
+    "T10", # flake8-debugger
+    "EXE", # flake8-executable
+    "ICN", # flake8-import-conventions
+    "INP", # flake8-no-pep420
+    "PIE", # flake8-pie
+    "T20", # flake8-print
+    "PYI", # flake8-pyi
+    "Q", # flake8-quotes
+    "RSE", # flake8-raise
+    "SLF", # flake8-self
+    "SLOT", # flake8-slots
+    "SIM", # flake8-simplify
+    "TCH", # flake8-type-checking
+    "INT", # flake8-gettext
+    "FIX", # flake8-fixme
+    "E", # pycodestyle - errors,
+    "W", # pycodestyle - warnings
+    "RUF", # ruff
+    "ERA", # eradicate
+    "N", # pep8-naming
+    "PL", # pylint
+    "COM812", # flake8-commas
+]
+
+ignore = [
+    "N", # pep8-naming
+    "RET", # flake8-return
+]
+
+[tool.ruff.lint.extend-per-file-ignores]
+"tests/*" = ["S101", "PL", "PYI024"]
+
+[tool.ruff.lint.flake8-quotes]
+multiline-quotes = "double"
+inline-quotes = "double"
+docstring-quotes = "double"
+
+[tool.ruff.lint.pylint]
+max-args = 8
+
+[tool.ruff.lint.isort]
+known-first-party = ["src"]
+split-on-trailing-comma = false
+combine-as-imports = true
+order-by-type = true
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = true

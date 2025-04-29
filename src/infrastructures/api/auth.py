@@ -1,5 +1,3 @@
-import uuid
-
 from dishka import FromDishka
 from dishka.integrations.fastapi import inject
 from fastapi import APIRouter
@@ -15,5 +13,4 @@ async def register_user_handler(
     dto: dtos.RegisterUserDTO,
     usecase: FromDishka[usecases.RegisterUserUsecase],
 ) -> dtos.RegisteredUserDTO:
-    print("bla bla", usecase)
     return await usecase.execute(dto)
