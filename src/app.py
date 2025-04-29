@@ -27,9 +27,6 @@ def create_app() -> FastAPI:
             exceptions.UsernameAlreadyExistsException: HTTPStatus.CONFLICT,
         }
 
-        raise HTTPException(
-            status_code=exception_status_mapping[type(exc)],
-            detail=exc.message,
-        )
+        raise HTTPException(status_code=exception_status_mapping[type(exc)], detail=exc.message)
 
     return app
