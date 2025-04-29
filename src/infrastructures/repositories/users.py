@@ -8,9 +8,9 @@ from src.domain import dtos, exceptions, interfaces, models
 
 class SQLAlchemyUserRepository(interfaces.UserRepositoryProtocol):
     _EMAIL_ALREADY_EXISTS_ERROR_MESSAGE = (
-        "duplicate key value violates unique constraint \"user_email_key\"")
+        'duplicate key value violates unique constraint "user_email_key"')
     _USERNAME_ALREADY_EXISTS_ERROR_MESSAGE = (
-        "duplicate key value violates unique constraint \"user_username_key\"")
+        'duplicate key value violates unique constraint "user_username_key"')
 
     def __init__(self, session: AsyncSession) -> None:
         self._session = session
