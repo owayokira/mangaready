@@ -2,12 +2,12 @@ from . import ApplicationException
 
 
 class EmailAlreadyExistsException(ApplicationException):
-    _MESSAGE = 'Email already exists'
+    _MESSAGE = "Email already exists"
 
 
 class UsernameAlreadyExistsException(ApplicationException):
-    _MESSAGE = 'Username already exists'
+    _MESSAGE = "Username already exists"
 
 
 class UserNotFoundException(ApplicationException):
-    _MESSAGE = 'User not found'
+    _MESSAGE = "User not found"

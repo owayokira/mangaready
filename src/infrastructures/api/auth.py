@@ -15,5 +15,5 @@ async def register_user_handler(
     dto: dtos.RegisterUserDTO,
     usecase: FromDishka[usecases.RegisterUserUsecase],
 ) -> dtos.RegisteredUserDTO:
-    print('bla bla', usecase)
+    print("bla bla", usecase)
     return await usecase.execute(dto)

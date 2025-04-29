@@ -37,16 +37,16 @@ class SQLAlchemyExtension(FastAPIExtension):
 
 def _create_user_table(metadata: sa.MetaData) -> sa.Table:
     return sa.Table(
-        'user',
+        "user",
         metadata,
-        sa.Column('id', sa.UUID(as_uuid=True), primary_key=True),
-        sa.Column('email', sa.String, unique=True, nullable=False),
-        sa.Column('username', sa.String(32), unique=True, nullable=False),
-        sa.Column('password', sa.String, nullable=False),
-        sa.Column('password_salt', sa.String, nullable=False),
-        sa.Column('created_at', sa.TIMESTAMP, nullable=False, default=sa.func.now()),
+        sa.Column("id", sa.UUID(as_uuid=True), primary_key=True),
+        sa.Column("email", sa.String, unique=True, nullable=False),
+        sa.Column("username", sa.String(32), unique=True, nullable=False),
+        sa.Column("password", sa.String, nullable=False),
+        sa.Column("password_salt", sa.String, nullable=False),
+        sa.Column("created_at", sa.TIMESTAMP, nullable=False, default=sa.func.now()),
         sa.Column(
-            'updated_at', sa.TIMESTAMP, nullable=False,
+            "updated_at", sa.TIMESTAMP, nullable=False,
             default=sa.func.now(), onupdate=sa.func.now(),
         ),
     )

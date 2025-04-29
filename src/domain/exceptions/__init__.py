@@ -6,8 +6,8 @@ from .users import (
 )
 
 __all__ = (
-    'ApplicationException',
-    'EmailAlreadyExistsException',
-    'UsernameAlreadyExistsException',
-    'UserNotFoundException',
+    "ApplicationException",
+    "EmailAlreadyExistsException",
+    "UsernameAlreadyExistsException",
+    "UserNotFoundException",
 )
